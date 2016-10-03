@@ -1,13 +1,10 @@
 var carLike = function (obj, loc){
 obj.loc = loc;
-obj.move
-return obj;
+obj.move = function(){
+	removeCarFromScreen(this.loc);
+	addDustSwirlToScreen(this.loc);
+	this.loc++;
+	addCarToScreen(this.loc);
 };
-
-// using this to select the object the function is referring to.
-var move = function(car){
-	removeCarFromScreen(car.loc);
-	addDustSwirlToScreen(car.loc);
-	car.loc++;
-	addCarToScreen(car.loc);
+return obj;
 };
