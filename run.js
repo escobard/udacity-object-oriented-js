@@ -1,4 +1,4 @@
-var amy = {loc:1};
+var amy = carLike({}, 1);
 move(amy);
-var ben = {loc:9};
+var ben = carLike({}, 9);
 move(ben);
