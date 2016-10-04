@@ -19,3 +19,22 @@ var methods = {
 on : function (){},
 off : function (){}
 };
+
+// further study on the extend object fucntion for native JS
+function extend(destination, source) {
+  for (var k in source) {
+    if (source.hasOwnProperty(k)) {
+      destination[k] = source[k];
+    }
+  }
+  return destination; 
+}
+// this allows for the object to be extended as shown in the tutorial.
+
+// with ES6 compliant JavaScript one can use the Object.Assign parameter to merge objects, as shown below
+var car = function (loc){
+var obj  = {loc: loc};
+Object.assign(obj, methods);
+return obj;
+};
+// only withs with es6 compliant compilers, best to use a function callback instead
