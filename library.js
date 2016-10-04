@@ -1,5 +1,5 @@
-var carLike = function (obj, loc){
-obj.loc = loc;
+var car = function (loc){
+var obj  = {loc: loc};
 obj.move = function(){
 	removeCarFromScreen(obj.loc);
 	addDustSwirlToScreen(obj.loc);
