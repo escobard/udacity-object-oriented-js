@@ -3,7 +3,8 @@
 var Car = function (loc){
 
 // added the Object.create method instead of a literal object to allow prototyping
-	var obj  = Object.create(Car.methods);
+// replaced Car.methods property to Car.prototype in order to call the object's methods via the prototype callback.
+	var obj  = Object.create(Car.prototype);
 
 // add the property loc to the obj object
 	obj.loc = loc;
@@ -19,17 +20,10 @@ var Car = function (loc){
 
 // moved the move function out of the car constructor function to not create a function per instance of the car function, saving memory
 // moved move and other custom functions into the methods variable to only write the functions attached to each object iteration once 
-Car.methods = {
-	move : function (){
-	removeCarFromScreen(this.oc);
-	addDustSwirlToScreen(this.loc);
+// changed to accept the prototype property of the Car object.
+Car.prototype.move = function (){
 	this.loc++;
-	addCarToScreen(this.loc);
-},
-	on : function (){},
-onff : function (){}
 };
-
 // further study on the extend object fucntion for native JS
 function extend(destination, source) {
   for (var k in source) {
