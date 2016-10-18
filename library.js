@@ -33,6 +33,8 @@ var Car = function (loc){
 Car.prototype.move = function (){
 	this.loc++;
 };
+// very important to remember that any .prototype designation is basically the stored delegation of each object instance, which is looked up every time the object is called.
+// this is not the same as calling the original object constructor
 
 // further study on the extend object function for native JS, another way to extend objects by merging them with other objects.
 function extend(destination, source) {
