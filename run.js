@@ -7,6 +7,21 @@ ban.move();
 // for example refer to below:
 console.log(Car.prototype.constructor);
 // the above callback would duplicate the EXACT calues of the Car variable.
+
 // another example is:
 console.log(amy.constructor);
 // this calls the Car variable, since Car is the constructor of the Amy variable
+
+// the following looks for the .prototype object of the right argument in the left
+// arguments prototype chain.
+console.log(amy instanceof Car);
+
+// another example below
+var Dog = function (){
+	return {legs: 4, bark:alert};
+};
+
+var fido = Dog();
+
+log(fido instanceof Dog);
+// this would return a false value, since the Dog object does not have a Dog.prototype property
