@@ -8,7 +8,10 @@ var Car = function (loc){
 //	var obj  = Object.create(Car.prototype);
 
 // add the property loc to the obj object
-	obj.loc = loc;
+// removed since the new constructor has been added to each object instance
+//	obj.loc = loc;
+
+	this.loc = loc;
 
 // extends the object by adding functions that extend its functionality via a single callback.
 // changed to instead call as a method of the car object, to avoid calling a global variable.
@@ -16,7 +19,12 @@ var Car = function (loc){
 // got rid of the extend function, as the object Car.methods is already being called to by the object.create callback.
 // extend(obj, Car.methods);
 // removed the return property of the Car object since the new constructor is being used for each instance of the Car object.
-	return obj;
+//	return obj;
+
+// the new constructor on any instance of an object automatically attaches the following lines of code to the called object; the following two lines are not necessary
+// but were added for reference purposes
+	this = Object.create(Car.prototype);
+	return this;
 };
 
 // moved the move function out of the car constructor function to not create a function per instance of the car function, saving memory
