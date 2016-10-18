@@ -1,6 +1,8 @@
-var amy = Car(1);
+// adding the new constructor to each of these instances of the Car object allows for the automatic addition of the Car.prototypes function
+// to each of instance of the object, and returns the objects value after the constructur function is ran
+var amy = new Car(1);
 amy.move();
-var ben = Car(9);
+var ben = new Car(9);
 ban.move();
 
 // the prototype.constructor property essentially mirrors the value of its parent object

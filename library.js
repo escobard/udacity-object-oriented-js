@@ -4,7 +4,8 @@ var Car = function (loc){
 
 // added the Object.create method instead of a literal object to allow prototyping
 // replaced Car.methods property to Car.prototype in order to call the object's methods via the prototype callback.
-	var obj  = Object.create(Car.prototype);
+// removed the property of the Car object that initiate a prototype, since the new constructor was added to each object instance.
+//	var obj  = Object.create(Car.prototype);
 
 // add the property loc to the obj object
 	obj.loc = loc;
@@ -14,7 +15,7 @@ var Car = function (loc){
 
 // got rid of the extend function, as the object Car.methods is already being called to by the object.create callback.
 // extend(obj, Car.methods);
-
+// removed the return property of the Car object since the new constructor is being used for each instance of the Car object.
 	return obj;
 };
 
