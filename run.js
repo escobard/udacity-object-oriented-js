@@ -4,7 +4,8 @@ var amy = new Car(1);
 amy.move();
 var ben = new Car(9);
 ban.move();
-
+var cal = new Car(2);
+cal.move();
 // the prototype.constructor property essentially mirrors the value of its parent object
 // for example refer to below:
 console.log(Car.prototype.constructor);
