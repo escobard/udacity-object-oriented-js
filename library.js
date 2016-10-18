@@ -24,7 +24,8 @@ var Car = function (loc){
 Car.prototype.move = function (){
 	this.loc++;
 };
-// further study on the extend object fucntion for native JS
+
+// further study on the extend object function for native JS, another way to extend objects by merging them with other objects.
 function extend(destination, source) {
   for (var k in source) {
     if (source.hasOwnProperty(k)) {
@@ -36,9 +37,19 @@ function extend(destination, source) {
 // this allows for the object to be extended as shown in the tutorial.
 
 // with ES6 compliant JavaScript one can use the Object.Assign parameter to merge objects, as shown below
-var car = function (loc){
-	var obj  = {loc: loc};
-	Object.assign(obj, Car.methods);
-	return obj;
+// var car = function (loc){
+	// var obj  = {loc: loc};
+	// Object.assign(obj, Car.methods);
+	// return obj;
 };
 // only withs with es6 compliant compilers, best to use a function callback instead
+
+
+// The following example has the same replationship to the Car.prototype
+// as our Car object function, so prototypes functions are essentially 
+// unique objects that can be applied to any variable.
+var Example = function (){
+	// returns the values of Car.prototype, and attaches that object to the
+	// Example variable
+	return Object.create(Car.prototype);
+}
