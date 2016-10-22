@@ -6,3 +6,7 @@ var Car = function(loc){
 Car.prototype.move = function(){
 	this.loc++;
 };
+
+var Van = function(loc){
+  Car.call(this, loc);
+};
