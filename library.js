@@ -1,15 +1,20 @@
 // re-written for pseudoclassical subclasses unit
+// refer to the below examples to show how this works in this specific context.
 var Car = function(loc){
 	this.loc = loc;
 };
+
 
 Car.prototype.move = function(){
 	this.loc++;
 };
 
+// due to how the call function works, the van subclass of the car superclass gets the object property .loc added to them, due to the inheritance from the car object. When a new van object is created, it attaches the loc property to the van object
+// since van is sharing the properties of the car object, due to the call method. 
 var Van = function(loc){
   Car.call(this, loc);
 };
+
 // call function explained
 
 // this is the main function, the two arguments being variable a and variable b
