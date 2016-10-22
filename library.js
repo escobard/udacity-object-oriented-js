@@ -19,6 +19,10 @@ var Van = function(loc){
 //Object.create runs 
 Van.prototype = Object.create(Car.prototype);
 
+// Set the Van prototype constructor to Van, so that the constructor feature properly points to Van when a new Van object is called.
+
+Van.prototype.constructor = Van();
+
 // Van properties inclusive to Van only below
 Van.prototype.grab = function (){};
 // call function explained
