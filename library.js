@@ -19,8 +19,8 @@ var Van = function(loc){
 //Object.create runs 
 Van.prototype = Object.create(Car.prototype);
 
-
-
+// Van properties inclusive to Van only below
+Van.prototype.grab = function (){};
 // call function explained
 
 // this is the main function, the two arguments being variable a and variable b
