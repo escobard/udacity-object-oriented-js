@@ -16,7 +16,10 @@ var Van = function(loc){
 };
 
 // if we want Van.prototype to be an object that delegates to Car.prototype, we create the delegation by using the Object.create function, which creates a new object for Van.prototype, with the properties of the Car.prototype object. 
+//Object.create runs 
 Van.prototype = Object.create(Car.prototype);
+
+
 
 // call function explained
 
@@ -80,3 +83,9 @@ var double = function(){
 // is referring to the first argument in the product function. in the double function, product.call is simply applying the properties of the product function to the arguments of the double function, thus making the double function reliant
 // on the product function, creating the double function as a subclass of the product function.  
 double.call(3);
+
+// other options that can be used, but arent recommended because they take up too much mem
+Van.prototype = new Car(); // creates a new object every time the Van is instanced, which takes up too much memory. 
+//Also, no way to pass in arguments in the van object this way, as they would all be declared as undefined. only because of the Car function's this parameter is this undefined
+// if instead we used an actual variable for the argument instead of this, this would actually work just fine. The only problem, is that this creates too many objects, 1 for 
+// van prototype, 1 for car prototype and 1 for car, per van instance.
