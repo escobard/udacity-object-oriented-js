@@ -1,20 +1,8 @@
 // re-written for pseudoclassical subclasses unit
-var Car = function() {
-	var obj = {loc: loc};
-	obj.move = function (){
-		obj.loc++
-	}
-	return obj;
+var Car = function(loc){
+	this.loc = loc;
 };
 
-var Van = function (loc){
-	var obj = Car(loc);
-	obj.grab = function {}
-	return obj;
-};
-
-var Cop = function (loc){
-	var obj = Car(log);
-	obj.call = function (){};
-	return obj;
+Car.prototype.move = function(){
+	this.loc++;
 };
