@@ -15,6 +15,9 @@ var Van = function(loc){
   Car.call(this, loc);
 };
 
+// if we want Van.prototype to be an object that delegates to Car.prototype, we create the delegation by using the Object.create function, which creates a new object for Van.prototype, with the properties of the Car.prototype object. 
+Van.prototype = Object.create(Car.prototype);
+
 // call function explained
 
 // this is the main function, the two arguments being variable a and variable b
