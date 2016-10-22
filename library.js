@@ -67,5 +67,8 @@ var double = function(){
 	return product.call(this, 2);
 };
 
-// this assigns the value 3 to the this (or first) parameter of the double function, and the argument of the function. then this value is assigned to the first argument of the product variable, which is num. 
+// this assigns the value 3 to the this (or first) parameter of the double function, and the argument of the function. then this value is assigned to the first argument of the product variable, which is also this. the confusing part is the this
+// parameter within both functions. However since this is called from two differnt scopes, it ONLY applies to the function that is invoking it. in double, the this parameter is referring to the argument of the double function. in product, this
+// is referring to the first argument in the product function. in the double function, product.call is simply applying the properties of the product function to the arguments of the double function, thus making the double function reliant
+// on the product function, creating the double function as a subclass of the product function.  
 double.call(3);
