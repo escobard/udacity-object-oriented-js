@@ -20,12 +20,17 @@ var Van = function(loc){
 Van.prototype = Object.create(Car.prototype);
 
 // Set the Van prototype constructor to Van, so that the constructor feature properly points to Van when a new Van object is called.
-
-Van.prototype.constructor = Van();
+Van.prototype.constructor = Van;
 
 // Van properties inclusive to Van only below
 Van.prototype.grab = function (){};
-// call function explained
+
+
+/*======================
+
+call function explained 
+
+=====================*/
 
 // this is the main function, the two arguments being variable a and variable b
 var product = function(a,b){
@@ -39,7 +44,12 @@ var double = function(x){
 
 double(3);
 
-// call function explained second example
+/*======================
+
+ call function explained second example
+
+=====================*/
+
 // changed the 'a' variable to 'num'
 var product = function(num,b){
 	return a * b;
@@ -54,7 +64,11 @@ var double = function(num){
 
 double(3);
 
-// call function explained third example - explains how the this parameter fits in. 
+/*======================
+
+call function explained third example - explains how the this parameter fits in. 
+ 
+=====================*/
 
 var product = function(num,b){
 	return num * b;
@@ -68,7 +82,11 @@ var double = function(){
 // this assigns the value 3 to the this parameter of the double function, and the argument of the function. then this value is assigned to the first argument of the product variable, which is num. 
 double.call(3);
 
-// call function explained last example - explains how the this parameter fits in to the superclass.
+/*======================
+
+call function explained last example - explains how the this parameter fits in to the superclass.
+ 
+=====================*/
 
 //in this example, the parameter this is the first argument of the function product, which assigns the first argument's value of the function product to the this argument. 
 var product = function(this,b){
@@ -90,6 +108,7 @@ double.call(3);
 
 // other options that can be used, but arent recommended because they take up too much mem
 Van.prototype = new Car(); // creates a new object every time the Van is instanced, which takes up too much memory. 
+
 //Also, no way to pass in arguments in the van object this way, as they would all be declared as undefined. only because of the Car function's this parameter is this undefined
 // if instead we used an actual variable for the argument instead of this, this would actually work just fine. The only problem, is that this creates too many objects, 1 for 
 // van prototype, 1 for car prototype and 1 for car, per van instance.
