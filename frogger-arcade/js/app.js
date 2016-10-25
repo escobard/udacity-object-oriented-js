@@ -1,11 +1,16 @@
-// Enemies our player must avoid
-var Enemy = function() {
+/*==========================
+
+Enemies our player must avoid
+
+===========================*/
+
+var Enemy = function(sprite) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
-    this.sprite = 'images/enemy-bug.png';
+    this.sprite = sprite;
 };
 
 // Update the enemy's position, required method for game
@@ -17,15 +22,22 @@ Enemy.prototype.update = function(dt) {
 };
 
 // Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function() {
+Enemy.prototype.render = function(x, y) {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    x = this.x;
+    y = this.y;
 };
 
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
 
-// this is the player function
+/*==========================
+
+this is the player function
+
+===========================*/
+
 var playerObject = function (){
 
     // this is the player sprite
@@ -36,10 +48,8 @@ var playerObject = function (){
 playerObject.prototype.update = function (dt){};
 
 // this creates the player render method
-playerObject.prototype.render = function (){
+playerObject.prototype.render = function (x, y){
     Object.create(Enemy.prototype.render);
-    this.x = 5;
-    this.y = 3;
 };
 
 // this creates the player handle method
@@ -49,14 +59,37 @@ playerObject.prototype.handleInput = function(){
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
+
+/*==============
+
+enemies objects
+
+===============*/
+
+// first enemy
+louis = new Enemy();
+louis.render(3,15);
+
+// second enemy
+lana = new Enemy();
+lana.render(4,13);
+
+// third enemy
+diana = new Enemy();
+diana.render(6,18);
+
+allEnemies = [louis, lana, diana];
+
 // Place the player object in a variable called player
 
-player = playerObject;
+/*==============
 
-allEnemies = [
+player object
 
+===============*/
 
-]
+player = new playerObject;
+player.render(5,10);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
