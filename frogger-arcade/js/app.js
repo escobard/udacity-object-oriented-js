@@ -33,13 +33,13 @@ var playerObject = function (){
 };
 
 // this creates the player update method
-playerObject.prototype.update = function (){};
+playerObject.prototype.update = function (dt){};
 
 // this creates the player render method
 playerObject.prototype.render = function (){
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    this.x = 5;
-    this.y = 3;
+    x = 5;
+    y = 3;
 };
 
 // this creates the player handle method
@@ -49,6 +49,8 @@ playerObject.prototype.handle = function(){};
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
+
+player = playerObject;
 
 
 
