@@ -37,14 +37,15 @@ playerObject.prototype.update = function (dt){};
 
 // this creates the player render method
 playerObject.prototype.render = function (){
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    x = 5;
-    y = 3;
+    Object.create(Enemy.prototype.render);
+    this.x = 5;
+    this.y = 3;
 };
 
 // this creates the player handle method
-
-playerObject.prototype.handle = function(){};
+playerObject.prototype.handleInput = function(){
+    this.handleInput;
+};
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -52,7 +53,10 @@ playerObject.prototype.handle = function(){};
 
 player = playerObject;
 
+allEnemies = [
 
+
+]
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
