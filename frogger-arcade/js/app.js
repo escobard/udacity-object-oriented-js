@@ -32,6 +32,10 @@ var playerObject = function (){
     this.sprite = 'images/player-boy.png';
 };
 
+// this creates the player update method
+playerObject.prototype.update = function (){};
+
+
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
