@@ -4,7 +4,7 @@ Speed
 
 ===========================*/
 
-var velocity = 10;
+var velocity = Math.floor(Math.random() * ( 5 ) + 1);
 
 /*==========================
 
@@ -21,7 +21,7 @@ var Enemy = function(x, y, speed) {
     this.y = y;
 
     //sets the speed of the enemy function
-    
+    this.speed = speed * velocity;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/Enemy-bug.png';
