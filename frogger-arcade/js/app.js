@@ -22,6 +22,7 @@ var Enemy = function(x, y, speed) {
 
     //sets the speed of the enemy function
     this.speed = speed * velocity;
+
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/Enemy-bug.png';
@@ -31,6 +32,10 @@ var Enemy = function(x, y, speed) {
 // Update the Enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
+
+    //moves enemy sprites
+    this.x += this.speed * dt;
+    
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
