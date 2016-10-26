@@ -12,13 +12,20 @@ Enemies our player must avoid
 
 ===========================*/
 
-var Enemy = function(sprite) {
+var Enemy = function(x, y, speed) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
+ 
+    // sets the arguments of the Enemy function.
+    this.x = x;
+    this.y = y;
 
+    //sets the speed of the enemy function
+    
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/Enemy-bug.png';
+
 };
 
 // Update the Enemy's position, required method for game
