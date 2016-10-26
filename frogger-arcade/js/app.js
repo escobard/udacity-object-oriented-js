@@ -23,9 +23,12 @@ var Enemy = function(x, y, speed) {
     //sets the speed of the enemy function
     this.speed = speed * velocity;
 
+    //sets the size of the enemy sprite
+    this.width = 100;
+    this.height = 65;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
-    this.sprite = 'images/Enemy-bug.png';
+    this.sprite = 'images/enemy-bug.png';
 
 };
 
