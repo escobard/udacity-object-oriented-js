@@ -4,7 +4,7 @@ Speed
 
 ===========================*/
 
-var velocity = Math.floor(Math.random() * ( 5 ) + 1);
+var velocity = Math.floor(Math.random() * ( 100 ) + 1);
 
 /*==========================
 
@@ -88,9 +88,17 @@ enemies objects
 ===============*/
 
 allEnemies = [
-    new Enemy(-100,1,3),
-    new Enemy(100,2,2),
-    new Enemy(-300,3,5),
+    new Enemy(
+    //first argument sets the x location (horizontal)
+    -100,
+    
+    //second argument sets the y location (vertical)
+    60,
+
+    //third argument sets the speed 
+    3),
+    new Enemy(100,140,2),
+    new Enemy(-300,230,5),
 ];
 
 // Place the player object in a variable called player
