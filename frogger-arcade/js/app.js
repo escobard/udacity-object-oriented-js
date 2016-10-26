@@ -80,9 +80,9 @@ enemies objects
 ===============*/
 
 allEnemies = [
-    new Enemy(),
-    new Enemy(),
-    new Enemy(),
+    new Enemy(-100,1,3),
+    new Enemy(100,2,2),
+    new Enemy(-300,3,5),
 ];
 
 // Place the player object in a variable called player
